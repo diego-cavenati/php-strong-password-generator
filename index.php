@@ -8,6 +8,16 @@ if (isset($_GET['passwordLength'])) {
     $yourPassword = generatePassword($numberLength);
 }
 
+$letters = $_GET['letters'];
+$numbers = false;
+$symbol = false;
+var_dump($letters);
+
+if (isset($_GET['letters'])) {
+    $letters = true;
+    var_dump($letters);
+}
+
 
 ?>
 
@@ -41,7 +51,21 @@ if (isset($_GET['passwordLength'])) {
                         <input type="text" class="form-control" name="passwordLength" id="passwordLength" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Quanto vuoi che sia lunga la tua password?</small>
                     </div>
-                    <button class="btn btn-primary" type="submit">Genera</button>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="letters" value="letters">
+                            <label class="form-check-label" for="letters">Lettere</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="numbers" value="numbers">
+                            <label class="form-check-label" for="numbers">Numeri</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="symbol" value="symbol">
+                            <label class="form-check-label" for="symbol">Simboli</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit" value="submit">Genera</button>
                 </form>
                 <?php if (isset($yourPassword)) : ?>
                     <h3>Ecco la tua password:</h3>
