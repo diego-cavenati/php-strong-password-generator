@@ -1,3 +1,14 @@
+<?php
+
+$passwordLength = $_GET['passwordLength'];
+$numberLength = (int)$passwordLength;
+
+if (isset($numberLength)) {
+    var_dump($numberLength);
+}
+
+
+?>
 <!doctype html>
 <html lang='it'>
 
@@ -16,8 +27,24 @@
 
 <body>
 
+    <main>
+        <div class="mainBox">
+            <div class="container text-center">
+                <h1>Generate your secure password</h1>
+                <span class="emoji">&#128540;</span>
+                <!-- Form -->
+                <form action="index.php" method="GET">
+                    <div class="input">
+                        <label for="passwordLength" class="form-label">Lunghezza password</label>
+                        <input type="text" class="form-control" name="passwordLength" id="passwordLength" aria-describedby="helpId" placeholder="">
+                        <small id="helpId" class="form-text text-muted">Quanto vuoi che sia lunga la tua password?</small>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Genera</button>
+                </form>
 
-
+            </div>
+        </div>
+    </main>
 
 
     <!-- Bootstrap script -->
